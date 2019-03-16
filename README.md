@@ -8,7 +8,7 @@ The setup was carried using the below environment
   ``sudo apt-get install python3``
 * Python3 dev and virtualenv tools:
 ``sudo apt-get install python3-dev python3-virtualenv``
-* Download & Install [Neo4j Server](http://neo4j.com/download)
+* Download, Install and Configure [Neo4j Server](http://neo4j.com/download)
 
 ### Stack
 
@@ -17,7 +17,7 @@ The setup was carried using the below environment
 * Neo4j-Server
 
 ### Setup
-Make sure your Neo4j-Server is up and running
+Make sure your Neo4j-Server is up and running.
 ```
 $ sudo service neo4j status
 ```
@@ -49,7 +49,7 @@ $ source venv/bin/activate
 
 Install the app and its dependencies:
 ```
-(venv)$ pip install .
+(venv)$ pip3 install .
 ```
 
 And finally start the Flask server.
