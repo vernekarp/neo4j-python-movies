@@ -1,5 +1,9 @@
 # neo4j-python-movies
-Neo4j application with Flask using the neo4j-python-driver
+Neo4j application with Flask using the neo4j-python-driver. 
+This application demonstrates the creation of sample neo4j 
+movie's and person's nodes and their relationship, during 
+installation, along with accessing them via Flask Endpoints.
+
 
 ### Pre-requisites
 The setup was carried using the below environment
