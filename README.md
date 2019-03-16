@@ -28,7 +28,16 @@ $ git clone https://github.com/vernekarp/neo4j-python-movies.git
 $ cd neo4j-python-movies
 ```
 
-Modify the file ``etc/neo4jnode.secrets`` to provide your neo4j access credentials and save the file.
+Modify the file ``etc/neo4jnode.secrets`` to provide your neo4j access credentials and save it.
+Similar to the format as shown below
+```
+$ cat etc/neo4jnode.secrets
+{
+  "uri": "bolt://localhost:7687",
+  "username": "neo4j",
+  "password": "your-password"
+}
+```
 
 Setup with [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs) so we don't break any other Python stuff you have on your machine. 
 After you've got that installed let's setup an environment for our app:
@@ -57,11 +66,62 @@ And finally start the Flask server.
 
 ```
 
-Navigate and access the respective API as below samples:
+Navigate and access the respective API and its response:
 * Actor (http://localhost:5000/actor/full-name):
   * [Tom Hanks](http://localhost:5000/actor/Tom%20Hanks)
+    ```
+    {
+      "actor": "Tom Hanks", 
+      "movies": [
+        "Charlie Wilson's War", 
+        "Apollo 13", 
+        "That Thing You Do", 
+        "The Polar Express", 
+        "The Green Mile", 
+        "A League of Their Own", 
+        "The Da Vinci Code", 
+        "Cast Away", 
+        "Cloud Atlas", 
+        "Sleepless in Seattle", 
+        Joe Versus the Volcano", 
+        "You've Got Mail"
+      ]
+    }
+    ```
   * [Robin Williams](http://localhost:5000/actor/Robin%20Williams)
-
+    ```
+    {
+      "movies": [
+        "What Dreams May Come", 
+        "The Birdcage", 
+        "Bicentennial Man"
+       ], 
+       "actor": "Robin Williams"
+    }
+    ```
 * Movie (http://localhost:5000/movie/title): 
   * [Apollo 13](http://localhost:5000/movie/Apollo%2013)
+    ```
+    {
+      "title": "Apollo 13",
+      "cast": [
+        "Ron Howard",
+        "Tom Hanks",
+        "Bill Paxton",
+        "Kevin Bacon",
+        "Gary Sinise",
+        "Ed Harris"
+      ]
+    }
+    ```
   * [Bicentennial Man](http://localhost:5000/movie/Bicentennial%20Man)
+    ```
+    {
+      "title": "Bicentennial Man",
+      "cast": [
+        "Oliver Platt",
+        "Chris Columbus",
+        "Robin Williams"
+      ]
+    }
+    ```
